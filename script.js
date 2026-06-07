@@ -75,7 +75,6 @@ else {
 
 function displayWeather(data) {
 
-```
 document.getElementById("city").innerText =
     `${data.name}, ${data.sys.country}`;
 
@@ -300,7 +299,6 @@ navigator.geolocation.getCurrentPosition(
         maximumAge: 0
     }
 );
-```
 
 }
 
@@ -310,7 +308,6 @@ document.addEventListener(
 "DOMContentLoaded",
 () => {
 
-```
     updateDateTime();
 
     getLocationWeather();
@@ -329,6 +326,4 @@ document.addEventListener(
             }
         );
 }
-```
-
 );
