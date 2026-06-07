@@ -3,6 +3,7 @@ const apiKey = "1eeb52d71f539968c05517b5b17967ea";
 // DATE & TIME
 
 function updateDateTime() {
+
     const now = new Date();
 
     document.getElementById("datetime").innerText =
@@ -10,52 +11,6 @@ function updateDateTime() {
 }
 
 setInterval(updateDateTime, 1000);
-
-// WEATHER THEMES
-
-function changeTheme(weather) {
-
-    weather = weather.toLowerCase();
-
-    if (weather.includes("clear")) {
-
-        document.body.style.background =
-            "linear-gradient(135deg,#ffb347,#ffcc33,#ff9800)";
-
-    } else if (weather.includes("cloud")) {
-
-        document.body.style.background =
-            "linear-gradient(135deg,#64748b,#94a3b8,#cbd5e1)";
-
-    } else if (
-        weather.includes("rain") ||
-        weather.includes("drizzle") ||
-        weather.includes("thunderstorm")
-    ) {
-
-        document.body.style.background =
-            "linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb)";
-
-    } else if (weather.includes("snow")) {
-
-        document.body.style.background =
-            "linear-gradient(135deg,#dbeafe,#bfdbfe,#93c5fd)";
-
-    } else if (
-        weather.includes("mist") ||
-        weather.includes("fog") ||
-        weather.includes("haze")
-    ) {
-
-        document.body.style.background =
-            "linear-gradient(135deg,#475569,#64748b,#94a3b8)";
-
-    } else {
-
-        document.body.style.background =
-            "linear-gradient(135deg,#0a0f1f,#111827,#1e293b)";
-    }
-}
 
 // DISPLAY WEATHER
 
@@ -85,6 +40,12 @@ function displayWeather(data) {
     document.getElementById("location").innerText =
         `📍 ${data.coord.lat.toFixed(4)}, ${data.coord.lon.toFixed(4)}`;
 
+    document.getElementById("pressure").innerText =
+        `${data.main.pressure} hPa`;
+
+    document.getElementById("visibility").innerText =
+        `${(data.visibility / 1000).toFixed(1)} km`;
+
     document.getElementById("sunrise").innerText =
         new Date(data.sys.sunrise * 1000)
         .toLocaleTimeString();
@@ -93,16 +54,8 @@ function displayWeather(data) {
         new Date(data.sys.sunset * 1000)
         .toLocaleTimeString();
 
-    document.getElementById("pressure").innerText =
-        `${data.main.pressure} hPa`;
-
-    document.getElementById("visibility").innerText =
-        `${(data.visibility / 1000).toFixed(1)} km`;
-
     document.getElementById("icon").src =
         `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
-
-    changeTheme(data.weather[0].main);
 }
 
 // 5 DAY FORECAST
@@ -118,6 +71,7 @@ async function getForecast(city) {
         const data = await response.json();
 
         if (!response.ok) {
+
             console.error(data);
             return;
         }
@@ -149,8 +103,8 @@ async function getForecast(city) {
                 </h4>
 
                 <img
-                    src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png"
-                    alt="forecast">
+                src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png"
+                alt="forecast">
 
                 <p>
                     ${Math.round(day.main.temp)}°C
@@ -168,7 +122,6 @@ async function getForecast(city) {
     } catch (error) {
 
         console.error(error);
-
     }
 }
 
@@ -214,7 +167,7 @@ async function getWeather() {
     }
 }
 
-// LIVE LOCATION
+// LIVE LOCATION WEATHER
 
 function getLocationWeather() {
 
@@ -243,7 +196,8 @@ function getLocationWeather() {
                     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
                 );
 
-                const data = await response.json();
+                const data =
+                    await response.json();
 
                 if (!response.ok) {
 
@@ -279,7 +233,6 @@ function getLocationWeather() {
             timeout: 15000,
             maximumAge: 0
         }
-
     );
 }
 
@@ -300,11 +253,10 @@ document.addEventListener(
                 function (e) {
 
                     if (e.key === "Enter") {
+
                         getWeather();
                     }
-
                 }
             );
-
     }
 );
