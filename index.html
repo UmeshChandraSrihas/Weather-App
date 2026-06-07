@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard</title>
+    <title>Dynamic Weather Dashboard</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -21,8 +21,18 @@
         <!-- HEADER -->
 
         <div class="header">
-            <h1>🌿 Nature Weather Dashboard</h1>
+            <h1>🌦 Dynamic Weather Dashboard</h1>
             <p id="datetime"></p>
+        </div>
+
+        <!-- WELCOME CARD -->
+
+        <div class="welcome-card">
+            <h2>🌍 Real-Time Weather Updates</h2>
+            <p>
+                Search any city or use your live location to get
+                current weather conditions and a 5-day forecast.
+            </p>
         </div>
 
         <!-- SEARCH -->
@@ -45,19 +55,37 @@
 
         </div>
 
-        <!-- MAIN WEATHER CARD -->
+        <!-- MAIN WEATHER -->
 
         <div class="weather-card">
 
-            <h2 id="city">Loading...</h2>
+            <div class="weather-top">
 
-            <p id="location"></p>
+                <div class="weather-info">
 
-            <img id="icon" alt="Weather Icon">
+                    <h2 id="city">Loading...</h2>
 
-            <h1 id="temp">--°C</h1>
+                    <p id="location">
+                        Detecting location...
+                    </p>
 
-            <p id="condition">Weather Condition</p>
+                    <h1 id="temp">--°C</h1>
+
+                    <p id="condition">
+                        Weather Condition
+                    </p>
+
+                </div>
+
+                <div class="weather-icon">
+                    <img
+                        id="icon"
+                        src=""
+                        alt="Weather Icon"
+                    >
+                </div>
+
+            </div>
 
         </div>
 
@@ -95,17 +123,42 @@
                 <p id="coordinates">--</p>
             </div>
 
+            <div class="info-card">
+                <h3>🌡 Pressure</h3>
+                <p id="pressure">--</p>
+            </div>
+
+            <div class="info-card">
+                <h3>👀 Visibility</h3>
+                <p id="visibility">--</p>
+            </div>
+
         </div>
 
         <!-- FORECAST -->
 
         <div class="forecast-section">
 
-            <h2>🌤 5-Day Forecast</h2>
+            <h2 class="forecast-title">
+                📅 5-Day Forecast
+            </h2>
 
-            <div id="forecast" class="forecast"></div>
+            <div
+                id="forecast"
+                class="forecast"
+            ></div>
 
         </div>
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                Developed by Umesh Chandra
+            </p>
+
+        </footer>
 
     </div>
 
