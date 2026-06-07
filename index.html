@@ -1,129 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Weather Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <div class="header">
-        <h1>🌤 Weather Dashboard</h1>
-        <p id="datetime"></p>
-    </div>
+        <!-- HEADER -->
 
-    <div class="search-section">
+        <div class="header">
+            <h1>🌿 Nature Weather Dashboard</h1>
+            <p id="datetime"></p>
+        </div>
 
-        <input
-            type="text"
-            id="cityInput"
-            placeholder="Search city..."
-        >
+        <!-- SEARCH -->
 
-        <button onclick="getWeather()">
-            Search
-        </button>
+        <div class="search-box">
 
-        <button onclick="getLocationWeather()">
-            📍 Live Location
-        </button>
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="🔍 Search city..."
+            >
 
-    </div>
+            <button onclick="getWeather()">
+                Search
+            </button>
 
-    <div class="weather-grid">
+            <button onclick="getLocationWeather()">
+                📍 Live Location
+            </button>
 
-        <!-- Live Weather -->
+        </div>
 
-        <div class="card main-weather">
+        <!-- MAIN WEATHER CARD -->
 
-            <h2>Current Weather</h2>
+        <div class="weather-card">
 
-            <h3 id="city">Loading...</h3>
+            <h2 id="city">Loading...</h2>
 
-            <img id="icon" alt="weather">
+            <p id="location"></p>
+
+            <img id="icon" alt="Weather Icon">
 
             <h1 id="temp">--°C</h1>
 
-            <p id="condition"></p>
+            <p id="condition">Weather Condition</p>
 
         </div>
 
-        <!-- Details -->
+        <!-- WEATHER DETAILS -->
 
-        <div class="card details">
+        <div class="info-grid">
 
-            <h2>Weather Details</h2>
-
-            <div class="detail">
-                💧 Humidity
-                <span id="humidity">--</span>
+            <div class="info-card">
+                <h3>💧 Humidity</h3>
+                <p id="humidity">--</p>
             </div>
 
-            <div class="detail">
-                💨 Wind
-                <span id="wind">--</span>
+            <div class="info-card">
+                <h3>💨 Wind Speed</h3>
+                <p id="wind">--</p>
             </div>
 
-            <div class="detail">
-                🌡 Feels Like
-                <span id="feels">--</span>
+            <div class="info-card">
+                <h3>🌡 Feels Like</h3>
+                <p id="feels">--</p>
             </div>
 
-            <div class="detail">
-                🌅 Sunrise
-                <span id="sunrise">--</span>
+            <div class="info-card">
+                <h3>🌅 Sunrise</h3>
+                <p id="sunrise">--</p>
             </div>
 
-            <div class="detail">
-                🌇 Sunset
-                <span id="sunset">--</span>
+            <div class="info-card">
+                <h3>🌇 Sunset</h3>
+                <p id="sunset">--</p>
             </div>
 
-            <div class="detail">
-                📍 Coordinates
-                <span id="coordinates">--</span>
+            <div class="info-card">
+                <h3>📍 Coordinates</h3>
+                <p id="coordinates">--</p>
             </div>
+
+        </div>
+
+        <!-- FORECAST -->
+
+        <div class="forecast-section">
+
+            <h2>🌤 5-Day Forecast</h2>
+
+            <div id="forecast" class="forecast"></div>
 
         </div>
 
     </div>
 
-    <div class="forecast-section">
-
-        <h2>5-Day Forecast</h2>
-
-        <div id="forecast" class="forecast"></div>
-        <p id="location"></p>
-
-<p id="coordinates"></p>
-
-<p id="humidity"></p>
-
-<p id="wind"></p>
-
-<p id="feels"></p>
-
-<p id="sunrise"></p>
-
-<p id="sunset"></p>
-
-<div id="forecast" class="forecast"></div>
-
-    </div>
-
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
