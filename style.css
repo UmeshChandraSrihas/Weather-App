@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0f0f0f,
+        #1a1a1a,
+        #2d1b00
+    );
+}
+
+.container{
+    width:1200px;
+    max-width:100%;
+
+    background:rgba(255,255,255,0.06);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,140,0,0.15);
+
+    border-radius:30px;
+
+    padding:30px;
+
+    box-shadow:
+    0 8px 35px rgba(255,140,0,0.15);
+}
+
+/* HEADER */
+
+.header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.header h1{
+    font-size:3rem;
+    color:#ffb347;
+    font-weight:700;
+
+    text-shadow:
+    0 0 20px rgba(255,179,71,0.4);
+}
+
+#datetime{
+    color:#d4d4d4;
+    margin-top:10px;
+}
+
+/* SEARCH BAR */
+
+.search-box{
+    display:flex;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.search-box input{
+
+    flex:1;
+
+    padding:16px 20px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    background:#181818;
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    border:2px solid #ff8c00;
+
+    transition:0.3s;
+}
+
+.search-box input::placeholder{
+    color:#bfbfbf;
+}
+
+.search-box input:focus{
+
+    box-shadow:
+    0 0 20px rgba(255,140,0,0.4);
+}
+
+/* SEARCH BUTTON */
+
+.search-box button{
+
+    border:none;
+
+    border-radius:15px;
+
+    padding:16px 25px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:0.3s;
+}
+
+.search-box button:first-of-type{
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff8c00,
+        #ffb347
+    );
+
+    color:#111;
+}
+
+/* LOCATION BUTTON */
+
+.search-box button:last-of-type{
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffd700,
+        #ffb347
+    );
+
+    color:#111;
+}
+
+.search-box button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 25px rgba(255,140,0,0.3);
+}
+
+/* WEATHER CARD */
+
+.weather-card{
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,140,0,0.15),
+        rgba(255,215,0,0.08)
+    );
+
+    border-radius:25px;
+
+    text-align:center;
+
+    padding:35px;
+
+    margin-bottom:25px;
+
+    border:1px solid rgba(255,179,71,0.15);
+}
+
+#city{
+
+    color:#ffffff;
+
+    font-size:2rem;
+
+    font-weight:600;
+}
+
+#location{
+
+    color:#cfcfcf;
+
+    margin-top:10px;
+}
+
+.weather-card img{
+
+    width:130px;
+    height:130px;
+}
+
+#temp{
+
+    font-size:5rem;
+
+    font-weight:700;
+
+    color:#ffb347;
+
+    text-shadow:
+    0 0 20px rgba(255,179,71,0.5);
+}
+
+#condition{
+
+    color:#e2e2e2;
+
+    font-size:18px;
+
+    text-transform:capitalize;
+}
+
+/* INFO GRID */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+}
+
+/* INFO CARD */
+
+.info-card{
+
+    background:
+    rgba(255,255,255,0.05);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+    transition:0.3s;
+
+    border:1px solid rgba(255,140,0,0.1);
+}
+
+.info-card:hover{
+
+    transform:translateY(-5px);
+
+    background:
+    rgba(255,140,0,0.08);
+}
+
+.info-card h3{
+
+    color:#ffd700;
+
+    margin-bottom:10px;
+}
+
+.info-card p{
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    font-weight:600;
+}
+
+/* FORECAST */
+
+.forecast-section{
+
+    margin-top:30px;
+}
+
+.forecast-section h2{
+
+    color:#ffb347;
+
+    margin-bottom:20px;
+}
+
+.forecast{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(150px,1fr));
+
+    gap:15px;
+}
+
+.forecast-card{
+
+    background:
+    rgba(255,255,255,0.05);
+
+    border-radius:18px;
+
+    padding:20px;
+
+    text-align:center;
+
+    transition:0.3s;
+
+    border:1px solid rgba(255,179,71,0.1);
+}
+
+.forecast-card:hover{
+
+    transform:translateY(-5px);
+
+    background:
+    rgba(255,140,0,0.1);
+}
+
+.forecast-card h4{
+
+    color:#ffffff;
+}
+
+.forecast-card p{
+
+    color:#ffb347;
+
+    font-weight:700;
+}
+
+.forecast-card small{
+
+    color:#d4d4d4;
+}
+
+.forecast-card img{
+
+    width:70px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .search-box{
+        flex-direction:column;
+    }
+
+    .header h1{
+        font-size:2rem;
+    }
+
+    #temp{
+        font-size:3.5rem;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+}
